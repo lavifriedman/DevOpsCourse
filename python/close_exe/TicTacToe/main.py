@@ -17,6 +17,7 @@ def check_for_winning(game_board):
                                  and (game_board[1][1] != ".")
     winning_in_square_angle_line_two = (game_board[1][1] == game_board[0][2]) and (game_board[1][1] == game_board[2][0])\
                                  and (game_board[1][1] != ".")
+    # list of all the possible conditions for winning
     all_the_possible_conditions_for_winning = [
         winning_in_square_line_one,
         winning_in_square_line_two,
@@ -27,6 +28,7 @@ def check_for_winning(game_board):
         winning_in_square_row_two,
         winning_in_square_row_three
     ]
+    # the function will check  and return True if one of the possible conditions is happening.
     for win_condition in all_the_possible_conditions_for_winning:
         if win_condition:
             return True
@@ -35,7 +37,8 @@ def check_for_winning(game_board):
 
 def receive_player_move():
     the_input_is_legal = False
-    # this while loop will continue until the player while write a legal location of a square in the game board.
+    # this while loop will continue until the player write a legal location of a square in the game board.
+    # example for legal input: '1,1'
     while not the_input_is_legal:
         player_move = input("please enter the location of where you want to put your symbol: ")
         square_location = player_move.split(",")
@@ -44,7 +47,7 @@ def receive_player_move():
             square_location[1] = int(square_location[1]) - 1
         # check the player enter a legal input.
         except ValueError:
-            print("please type agine, your last input was illegal.")
+            print("please enter the square location agine, your last input was illegal.")
             continue
         # check that the input of the player is not out of the game board range.
         if (square_location[0] > 2) or (square_location[0] < 0):
@@ -59,7 +62,7 @@ def receive_player_move():
 
 def print_game_board(game_board):
     for square_line in game_board:
-        print(square_line)
+        print(square_line[0], ' ', square_line[1], ' ', square_line[2])
 
 
 def main():
