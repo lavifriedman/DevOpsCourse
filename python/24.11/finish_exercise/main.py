@@ -7,14 +7,19 @@ def create_squares(length, height):
             cell_line.append(None)
     return squares
 
+
 def print_the_squares(squares):
     for n in squares:
         print(n)
+
+
 def set_alive_cells(row, height, squares):
     squares[row][height] = "alive"
 
+
 def set_ded_cells(row, height, squares):
     squares[row][height] = None
+
 
 def count_number_of_neighbors(row, height, squares):
     neighbors_number = 0
