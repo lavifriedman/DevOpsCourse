@@ -31,7 +31,7 @@ def receive_player_move():
         square_location = player_move.split(",")
         square_location[0] = int(square_location[0]) - 1
         square_location[1] = int(square_location[1]) - 1
-        # check that the input of the users is legal.
+        # check that the input of the users is not out of range.
         if (square_location[0] > 2) or (square_location[0] < 0):
             print('your input is out the range of the game_board')
             continue
@@ -67,13 +67,13 @@ def main():
             game_board[square_location[0]][square_location[1]] = player_one_symbol
         else:
             game_board[square_location[0]][square_location[1]] = player_two_symbol
+        # Check if one of the players is winning.
         if check_for_winning(game_board) and (number_of_turns % 2 == 0):
-            result_of_the_game = 'player of symbol X is win'
-            return result_of_the_game
+            return 'player of symbol X is win'
         elif check_for_winning(game_board) and (number_of_turns % 2 == 0):
-            result_of_the_game = 'player of symbol O is win'
-            return result_of_the_game
+            return 'player of symbol O is win'
         number_of_turns += 1
+    # return when there is a tie between the  two players.
     return 'no one is win in this game'
 
 
