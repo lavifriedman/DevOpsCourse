@@ -17,6 +17,13 @@ def compute_sha256(file_name):
 
 
 def file_type_is_exe(file_name):
+    """
+    Function check if filename extension is 'exe'.
+    :param file_name: name of the file
+    :type file_name: str
+    :rtype: bool
+    :return: True or False
+    """
     if str(file_name).endswith('.exe'):
         return True
     else:
@@ -24,6 +31,14 @@ def file_type_is_exe(file_name):
 
 
 def exe_file_have_a_has_file(file_name, has_dir_path):
+    """
+    Function check if there is all redy a file with has key in has_dir_path.
+    :param file_name:
+    :param has_dir_path:
+    :type file_name: str
+    :type has_dir_path: str
+    :return: None
+    """
     for file in os.listdir(has_dir_path):
         if file[:-4] == file_name[:-4]:
             return True
@@ -31,11 +46,25 @@ def exe_file_have_a_has_file(file_name, has_dir_path):
 
 
 def create_has_dir(dir_path):
+    """
+    Function create a directory for storge all the HAS256-keys.
+    :param dir_path: the work directory for create the has-directory.
+    :type dir_path: str
+    :return: None
+    """
     if 'has-dir' not in os.listdir(dir_path):
         os.mkdir('has-dir')
 
 
 def convert_dir_files_to_has256file(dir_path, has_dir=None):
+    """"
+    Function create a HAS256 key for all files with 'exe' filename extension.
+    :param dir_path: path of the directory contain all the file.
+    :param has_dir=path of directory that saves all the SAH256 keys as txt file with 'has' extension
+    :type dir_path: str
+    :type has_dir: str
+    :return: None
+    """
     if has_dir is None:
         create_has_dir(dir_path)
         has_dir = 'has-dir'
