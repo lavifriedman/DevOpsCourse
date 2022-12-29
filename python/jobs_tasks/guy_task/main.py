@@ -1,5 +1,5 @@
-""""
-Write a program in Python that calculates SHA256 for every 'exe' file in given directory and stores to file - named
+"""Write a program in Python that calculates SHA256 for every 'exe' file
+ in given directory and stores to file - named
 after the exe.
 * and skips existing sha files
 *verifying existing sha also
@@ -60,7 +60,7 @@ def convert_dir_files_to_has256file(dir_path, has_dir=None):
     """"
     Function create a HAS256 key for all files with 'exe' filename extension.
     :param dir_path: path of the directory contain all the file.
-    :param has_dir=path of directory that saves all the SAH256 keys as txt file with 'has' extension
+    :param has_dir: path of directory that saves all the SAH256 keys as txt file with 'has' extension
     :type dir_path: str
     :type has_dir: str
     :return: None
