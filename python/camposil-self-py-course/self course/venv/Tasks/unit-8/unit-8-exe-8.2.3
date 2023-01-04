@@ -1,0 +1,16 @@
+import itertools
+
+
+def mult_tuple(tuple1, tuple2):
+    combinations = []
+    for n1 in tuple1:
+        for n2 in tuple2:
+            combinations.append((n1, n2))
+            combinations.append((n2, n1))
+    return tuple(combinations)
+
+
+if __name__ == "__main__":
+    tuple1 = (1, 2, 3)
+    tuple2 = (4, 5, 6) 
+    print(mult_tuple(tuple1, tuple2))

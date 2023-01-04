@@ -1,0 +1,16 @@
+def longest(my_list):
+    """fuction collect a list of values type str and find the str with the longest length.
+    :param my_list: list that contain values type str.
+    :type my_list: list.
+    :return: the str with longest len from my_list.
+    :rtype: str"""
+    my_list.sort(key = len)
+    return my_list[-1]
+
+def main():
+    help(longest)
+    list1 = ["111", "234", "2000", "goru", "birthday", "09"]
+    print(longest(list1))
+
+if __name__ == "__main__":
+    main()

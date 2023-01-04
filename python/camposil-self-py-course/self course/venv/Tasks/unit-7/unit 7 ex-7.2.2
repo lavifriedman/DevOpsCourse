@@ -1,0 +1,23 @@
+def numbers_letters_count(my_str):
+    """fuction receive a sting and count the appears of letters and numbers in the sting.
+    :param my_str: string the fuction receive.
+    :param number_of_digits: conut the appears number of digits in the sting.
+    :param number_of_letters: conut the appears number of letters in the sting.
+    :return: list that cuntain number_of_digits and number_of_letters in my_str.
+    :rtype: list."""
+    number_of_letters = 0
+    number_of_digits = 0
+    for n in my_str:
+        #count the appears number of digits in my_list
+        if n.isdigit():
+            number_of_digits += 1
+        #count the appears number of letters in my_list    
+        else:
+            number_of_letters += 1
+    return [number_of_digits, number_of_letters]
+
+def main():
+    print(numbers_letters_count("python 3.6.3"))
+
+if __name__ == "__main__":
+    main()

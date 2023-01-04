@@ -1,0 +1,20 @@
+def check_win(secret_word, old_letters_guessed):
+    """fuction check if all the leters in secret_word str are in old_letters_guessed list.
+    :param secret_word: string of a word the player need to guesse.
+    :param old_letters_guessed: list of ll the letters the player all ready guesse.
+    :type secret_word: str.
+    :type old_letters_guessed: list.
+    :return: True/False if all the letters of secret_word are in old_letters_guessed.
+    :rtype: bool."""
+    for n in secret_word:
+        if not(n in old_letters_guessed):
+            return False
+    return True
+
+def main():
+    old_letters_guessed = ['f', 'r', 'e', 'i', 'n', 'd', 's']    
+    secret_word = "friends"
+    print(check_win(secret_word, old_letters_guessed))
+
+if __name__ == "__main__":
+    main()

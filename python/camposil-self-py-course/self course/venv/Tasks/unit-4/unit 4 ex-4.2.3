@@ -1,0 +1,14 @@
+user_temperature = input("Insert the temperature you would like to convert: ")
+temperature_as_number = float(user_temperature[:-1])
+the_temperature_convert = 0
+
+if (user_temperature[-1] == "c") or (user_temperature[-1] == "C"):
+
+    the_temperature_convert = (9 * temperature_as_number + 160) / 5
+    print( str(the_temperature_convert) + "f" )
+    
+elif (user_temperature[-1] == "f") or (user_temperature[-1] == "F"):
+
+    the_temperature_convert = (5 * temperature_as_number - 160) / 5
+    print( str(the_temperature_convert) + "c" )
+

@@ -1,0 +1,22 @@
+import calendar
+
+user_date = input("Enter a date: ")
+day = int(user_date[:2])
+month = int(user_date[3:5])
+year = int(user_date[6:])
+day_in_the_week_number = calendar.weekday(year, month, day)
+
+if day_in_the_week_number == 0:
+    print("Sunday")
+elif day_in_the_week_number == 1:
+    print("Monday")
+elif day_in_the_week_number == 2:
+    print("Tuesday")
+elif day_in_the_week_number == 3:
+    print("Wednesday")
+elif day_in_the_week_number == 4:
+    print("Thursday")
+elif day_in_the_week_number == 5:
+    print("Friday")
+elif day_in_the_week_number == 6:
+    print("Saturday")

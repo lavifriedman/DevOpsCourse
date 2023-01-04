@@ -1,0 +1,21 @@
+def func(num1, num2):
+    """Calculates the prouduct of tow numbers.
+    :parma num1: number that multiply with num2
+    :parma num2: number that multioly with num1
+    :type num1: int
+    :type num2: int
+    :return: the product of tow numbers
+    :rtype: int
+    """
+    product = num1 * num2
+    return product 
+
+def main():
+    #call the function func, and test it with user input
+    help(func)
+    num1=int(input("Enter a number here: "))
+    num2=int(input("Enter a number here: "))
+    print(func(num1, num2))
+
+if __name__ == "__main__":
+    main()

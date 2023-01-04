@@ -1,0 +1,120 @@
+def grocery_list(buy_str):
+    """fuction receive a string of grocery list and convert that to a list.
+    :param buy_str: string of groceryes.
+    :type buy_str: str.
+    :return list_of_groceryes: list of grocery, base of buy_str.
+    :rtype: list"""
+    list_of_groceryes = []
+    for n in buy_str:
+        #check if n is a sing ","
+        if (n == ","):
+            #save the relevant segment of a grocery from the string as a new value in list_of_groceryes.  
+            list_of_groceryes.append(buy_str[:buy_str.index(n)])
+            buy_str = buy_str[buy_str.index(n) + 1:]
+        #save the last grocery in the string as new value in list_of_groceryes.    
+        elif (buy_str.index(n) == len(buy_str)-1):
+            list_of_groceryes.append(buy_str)
+    return list_of_groceryes
+
+
+def check_if_grocery_is_in_list(grocery_list):
+    """function check the presence of grocery in a list.
+    :param grocery_list: list of groceryes.
+    :param grocery_name: the name of the grocery the fuction look for in grocery_list.
+    :type grocery_list: list.
+    :type grocery_name: str.
+    :return: True/False if grocery_name value is presence in grocery_list.
+    :rtype: bool"""
+    grocery_name = input("Enter a name of grocery: ")
+    if grocery_name in grocery_list:
+        return True
+    else:
+        return False
+
+def grocery_amount_in_the_list(grocery_list):
+    """fuction receive grocery_list and check the amount of specific grocery int the list.
+    :param grocery_list: list of groceryes.
+    :param grocery: a name of specific grocery.
+    :type grocery_list: list.
+    :type grocery: str.
+    :return: the count amount of the value grocery in the list.
+    :rtype: int."""
+    grocery = input("Enter please a name of grocery: ")
+    return grocery_list.count(grocery)
+
+def string_have_only_letters(my_str):
+    """fuction receive a string and check if all the sing in the string are letters.
+    :param my_str: a string of grocery name.
+    :type my_string: a string.
+    :return: True/False if my_str have only letters.
+    :rtype: bool."""
+    for n in my_str:
+       if not(n.isalpha()):
+           return False
+    return True
+
+def print_of_ilegal_groceryes(grocery_list):
+    """function receive a list and find all the values that are short thaen 3 sings,
+    or have a ilegal sings(no letters).
+    :param grocery_list: list of groceryes.
+    :param type: list.
+    :return list_of_ilegal_grocery: list of all ilegal groceryes.
+    :rtype: list."""
+    list_of_ilegal_grocery = []
+    for n in grocery_list:
+        if (len(n) < 3) or not(string_have_only_letters(n)):
+            list_of_ilegal_grocery.append(n)        
+    return list_of_ilegal_grocery
+
+def no_duplication(grocery_list):
+    """fuction receive a list and remove all the duplications values.
+    :param list_of_groceryes: a list of groceryes.
+    :type grocery_list: list.
+    :return: list of groceryes without duplications.
+    :rtype: list"""
+    for n in grocery_list:
+        if grocery_list.count(n) > 1:
+            while grocery_list.count(n) > 1:
+                grocery_list.remove(n)
+    return grocery_list
+
+def remove_grocery(grocery_list, grocery):
+    """fuction reseve a list, string valueand remove from the list the specific string.
+    :param grocery_list: list of groceryes.
+    :param grocery: the value string function reomve from the list.
+    :type grocery_list: list.
+    :type grocery: str.
+    :return: grocery_list without the value of grocery.
+    :rtype: list."""
+    while grocery_list.count(grocery) != 0:
+        grocery_list.remove(grocery)
+    return grocery_list
+    
+def main():
+    user_chocie = 0
+    user_grocery_list = input("Enter yourgrocery list here:")
+    user_grocery_list = grocery_list(user_grocery_list)
+    while user_chocie != 9:
+        user_chocie = int(input("please select a number between 1 to 9: "))
+        if user_chocie == 1:
+            print(user_grocery_list)
+        elif user_chocie == 2:
+            print(len(user_grocery_list))
+        elif user_chocie == 3:
+            print("grocery in the list: ", check_if_grocery_is_in_list(user_grocery_list))
+        elif user_chocie == 4:
+            print("The amount count of grocery in the list is: ", grocery_amount_in_the_list(user_grocery_list))
+        elif user_chocie == 5:
+            user_grocery_list = remove_grocery(user_grocery_list, input("enter the name of the grocery we wnat to remove from the list: "))
+        elif user_chocie == 6:
+            user_grocery_list.append(input("Enter the grocery you want add to the list: "))
+        elif user_chocie == 7:
+            print(print_of_ilegal_groceryes(user_grocery_list))
+        elif user_chocie == 8:
+            user_grocery_list = no_duplication(user_grocery_list)
+    
+    
+    
+
+if __name__ == "__main__":
+    main()

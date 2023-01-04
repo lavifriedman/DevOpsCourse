@@ -1,0 +1,17 @@
+def extend_kist_x(list_x, list_y):
+    """function collect list_x and list_y, and unify them list_y to the start of list_x
+    :param list_x: list that here start unify with list_y.
+    :parma list_y: list that unify with the start of list_x.
+    :type list_x: list.
+    :type list_y: list.
+    :return: the tow lists unify as on list.
+    :rtype: list"""
+    list_x[:0] = list_y
+    return list_x
+    
+def main():
+    print(extend_kist_x([4, 5, 6], [1, 2, 3]))
+
+if __name__ == "__main__":
+    main()
+    
