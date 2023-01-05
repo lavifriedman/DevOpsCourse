@@ -1,25 +1,23 @@
 
 def create_players_list():
-    user_input = 'MOVE ON'
+    user_input = input('Enter player name, for exit enter "stop": ')
     list_of_players = []
     player_profile = {'player_name': '', 'player_age': 0, 'player_properties': ''}
-    print('please enter a new player profile.')
     while user_input != 'stop':
-        user_input = ''
         # user enter player name
         while not (user_input.islower() and not user_input.isdigit()):
-            user_input = input('Enter player name here: ')
-            if not (user_input.islower() and not user_input.isdigit()):
+            if not user_input.islower():
                 print("The name you enter is not legal!!! please enter again a legal name.")
+                user_input = input('Enter player name: ')
                 continue
-            player_profile['player_name'] = user_input
+        player_profile['player_name'] = user_input
         # user enter player age
         while not user_input.isdigit():
             user_input = input('Enter player age here: ')
             if not user_input.isdigit():
                 print("The age you enter is not legal!!! please enter again a legal age.")
                 continue
-            player_profile['player_age'] = int(user_input)
+        player_profile['player_age'] = int(user_input)
         # user enter player properties
         while not user_input.islower():
             user_input = input('Enter player properties here: ')
@@ -30,7 +28,7 @@ def create_players_list():
         # add the player profile to list of players
         list_of_players.append(player_profile)
         player_profile = {'player_name': '', 'player_age': 0, 'player_properties': ''}
-        user_input = input('if we want to exit enter "stop": else type a new player name here:')
+        user_input = input('enter player name, for exit enter "stop": ')
     return list_of_players
 
 
@@ -70,7 +68,6 @@ def print_tribe_players(tribe_list):
 
 def put_players_in_tribes():
     players_list = create_players_list()
-    print(players_list)
     tribe_libolan = []
     tribe_apolaki = []
     for player in players_list:
