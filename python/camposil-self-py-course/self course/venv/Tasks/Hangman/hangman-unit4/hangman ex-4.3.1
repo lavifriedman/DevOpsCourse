@@ -1,0 +1,21 @@
+player_guess=input("Guess a letter: ")
+correct_letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+the_user_guess_is_a_singil_siing = len(player_guess) == 1
+the_user_guess_is_a_letter = False
+
+for n in correct_letters:
+    if n == player_guess: 
+        the_user_guess_is_a_letter = True
+        break
+    else:
+        the_user_guess_is_a_letter = False
+
+
+if (the_user_guess_is_a_letter) and (the_user_guess_is_a_singil_siing):
+    print(player_guess)
+elif ( not(the_user_guess_is_a_letter)) and ( not(the_user_guess_is_a_singil_siing) ):
+    print("E3")
+elif (the_user_guess_is_a_letter) and ( not(the_user_guess_is_a_singil_siing) ):
+    print("E2")
+else:
+    print("E1")

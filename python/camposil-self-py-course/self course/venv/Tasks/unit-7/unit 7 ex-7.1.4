@@ -1,0 +1,22 @@
+def squared_numbers(start, stop):
+    """fuction receive tow numbers, start and stop in assumption that start < stop,
+    and create a list of all squared numbers between and includ start and stop.
+    :param start: the start number of squared numbers list.
+    :param stop: the last number of squared number list.
+    :type start: int.
+    :type stop: int.
+    :return squared_numbers_list: list of all squared numbers between and includ start and stop.
+    :rtype: list.
+    """
+    squared_numbers_list = []
+    while start <= stop:
+        squared_numbers_list.append(start ** 2)
+        start = start + 1
+    return squared_numbers_list
+
+def main():
+    print(squared_numbers(4, 8))
+    print(squared_numbers(-3, 3))
+
+if __name__ == "__main__":
+    main()    

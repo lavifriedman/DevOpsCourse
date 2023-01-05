@@ -1,0 +1,15 @@
+def anagrams(str1, str2):
+    if len(str1) == len(str2):
+        for letter in str1:
+            if not(letter in str2):
+                return False
+    else:
+        return False    
+    return True
+
+
+def sort_anagrams(list_of_strings):
+    total_anagrams_list = []
+    anagrams_list = []
+    for string in list_of_strings:
+         

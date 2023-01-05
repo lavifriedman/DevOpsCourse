@@ -1,0 +1,31 @@
+def decode_mp3_file(file_path):
+    items_list = []
+    with open(file_path, 'r') as file_text:
+        data = file_text.read()
+        for line in data.split('\n'):
+            items_list.append(line.split(';'))
+    return items_list
+  
+def most_frequent(List):
+    counter = 0
+    num = List[0]     
+    for i in List:
+        curr_frequency = List.count(i)
+        if(curr_frequency > counter):
+            counter = curr_frequency
+            num = i
+    return num  
+    
+def my_mp3_playlist(file_path):
+    longest_song_name = ''
+    number_of_songs = 0
+    preformes_list = []
+    frequenc_preformer = ''
+    items_list = decode_mp3_file(file_path)
+    for item in items_list:
+        preformes_list.append(item[1])
+        if len(item[0]) > len(longest_song_name):
+            longest_song_name = item[0]
+    number_of_songs = len(item_list)
+    frequenc_preformer = most_frequent(preformes_list)
+    return longest_song_name number_of_songs frequenc_preformer

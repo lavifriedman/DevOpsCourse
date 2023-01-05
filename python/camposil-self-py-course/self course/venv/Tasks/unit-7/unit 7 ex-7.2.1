@@ -1,0 +1,21 @@
+def is_greater(my_list, n):
+    """function receive list of numbers and number n,
+    and remove form the list all the numbers that are smaller  and equal than n.
+    :param my_list: kistof numbers.
+    :param n: the indicate number for which values are remove from my_list.
+    :type my_list: list.
+    :type n: int.
+    :return result: list of all numbers from my_list thar are big than n.
+    :rtype: list."""
+    result = []
+    for number in my_list:
+        if number > n:
+            result.append(number)
+    return result
+
+def main():
+    list_x = [1, 30, 25, 60, 27, 28]
+    print(is_greater(list_x, 28))
+
+if __name__ == "__main__":
+    main()

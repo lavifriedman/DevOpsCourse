@@ -1,0 +1,10 @@
+def are_files_equal(file1, file2):
+    with open(file1, 'r') as file_text1:
+            with open(file2, 'r') as file_text2:
+                if file_text1.read() == file_text2.read():
+                    return True
+    return False
+
+
+if __name__ == "__main__":
+    print(are_files_equal(r'C:\Users\lavi\Desktop\text1.txt',r'C:\Users\lavi\Desktop\text2.txt'))

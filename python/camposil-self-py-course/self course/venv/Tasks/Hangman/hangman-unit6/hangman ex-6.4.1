@@ -1,0 +1,41 @@
+def check_vallid_input(letter_guessed, old_letters_guessed):
+    """check if the letter_guessed is a singl letter from the englihs alphabet.
+    :param letter_guessed: the user input guessed
+    :param old_letters_guessed: list of letters the player all radey use.
+    :param str_of_english_alphabet: str of capital/lowr letters of english alphabet.
+    :param leteer_guessed_is_singl_sing: check if the len of letter_guessed is one.
+    :param letter_guessed_is_letter: check if letter_guessed is a letter in english alphabet
+    :type letter_guessed: str
+    :type old_letters_guessed: list
+    :type str_of_english_alphabet: str
+    :type leteer_guessed_is_singl_sing: bool
+    :type letter_guessed_is_letter: bool
+    :return: True/False if letter_guessed is a singl letter
+    :rtype: bool
+    """
+    str_of_english_alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    leteer_guessed_is_singl_sing = len(letter_guessed) == 1
+    letter_guessed_is_letter = False
+    #check if letter_guessed is a letter the player all radey use.
+    for n in old_letters_guessed:
+        if letter_guessed == n:
+            return False
+    #check if letter_guessed is a letter in english alphabet
+    for n in str_of_english_alphabet:
+        if n == letter_guessed:
+            letter_guessed_is_letter = True
+            break
+    #check if the letter_guessed is a singl letter from the englihs alphabet
+    if (leteer_guessed_is_singl_sing) and (letter_guessed_is_letter):
+        return True
+    else:
+        return False
+
+def main():
+    #call and check function check_vallid_input
+    help(check_vallid_input)
+    user_str = input("Enter your guessed here: ")
+    print(check_vallid_input(user_str,["a", "b", "c"]))
+
+if __name__ == "__main__":
+    main()

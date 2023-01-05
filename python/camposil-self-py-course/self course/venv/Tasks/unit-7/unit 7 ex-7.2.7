@@ -1,0 +1,20 @@
+def arrow(my_char, max_length):
+    """fuction receive a sing and create a arrow string base of the sing.
+    :param my_char: the sing useto bulid the arrow.
+    :param max_length: determine the max length of the arrow string.
+    :tpye my_char: str.
+    :type max_length: int.
+    :return arrow_str: a arrow string base on the sing value of my_char.
+    :rtype: str."""
+    arrow_str = ""
+    for n in range(max_length):
+        arrow_str = arrow_str + my_char * n + "\n"
+    for n in range(max_length, 0, -1):
+        arrow_str = arrow_str + my_char * n + "\n"
+    return arrow_str
+
+def main():
+    print(arrow("*", 5))
+
+if __name__ == "__main__":
+    main()

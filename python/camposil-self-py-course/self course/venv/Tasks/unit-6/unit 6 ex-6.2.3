@@ -1,0 +1,23 @@
+def format(my_list):
+    """Function collect all the values in the even's cells and last value of a list pluse str "and "
+    :param my_list: a recesive list the function collect all  her values in even's cells and last cell
+    :param last_value_of_list: the value in the last cell of the list
+    :type my_list: list
+    :type last_value_of_list: str
+    :return: list of all even cells values and the last value of my_list
+    :rtype: list"""
+    #save the last value of my_list and add it str "and " 
+    last_value_of_list = ["and " + my_list[-1]]
+    #keep only the even cell's value of my_list
+    my_list = my_list[:-1:2]
+    #add back the last value to my_list
+    my_list = my_list +last_value_of_list
+    return my_list 
+
+def main():
+    #call and test function format
+    a_list = ["hydrogen", "helium", "lithium", "beryllium", "boron", "magnesium"]
+    print(format(a_list))
+
+if __name__ == "__main__":
+    main()

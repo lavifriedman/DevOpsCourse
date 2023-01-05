@@ -1,0 +1,10 @@
+def last_early(my_str):
+    for n in my_str[:-1]:
+        if n == my_str[-1]:
+           return True
+        else:
+            return False
+           
+
+user_str = input("plese enter a str: ")
+print(last_early(user_str))

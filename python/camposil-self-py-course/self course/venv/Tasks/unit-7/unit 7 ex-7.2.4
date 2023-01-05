@@ -1,0 +1,23 @@
+def seven_boom(end_number):
+    """fuction reseve  end_number and  create a list of numbers in the len of end_number.
+    fuction replace all the values in the list that have the digit 7 or divide by 7 with the string "BOOM"
+    :param end_number: number that determent the len of the list.
+    :type end_number: int
+    :return list_of_numbers: list of numbers form 0 to end_nuber and instead of numbers that divide by 7 or includ the digit 7 the string"BOOM"
+    replace them.
+    :rtype: list"""
+    list_of_numbers = [0]
+    #creat list of numbers from zero to end_number.
+    while len(list_of_numbers) < end_number +1:
+        list_of_numbers.append(len(list_of_numbers))
+    #replace all numbers that divide by 7 or have the digit 7 by the string "BOOM".
+    for value in list_of_numbers:
+        if (value % 7 == 0) or (str(value).count("7") > 0):
+            list_of_numbers[list_of_numbers.index(value)] = "BOOM"
+    return list_of_numbers
+
+def main():
+    print(seven_boom(17))
+
+if __name__ == "__main__":
+    main()

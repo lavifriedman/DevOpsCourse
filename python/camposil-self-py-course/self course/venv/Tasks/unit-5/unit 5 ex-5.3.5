@@ -1,0 +1,17 @@
+def distance(num1, num2, num3):
+    diferrence_between_nuum1_and_num2 = abs(num1 - num2)
+    diferrence_between_nuum1_and_num3 = abs(num1 - num3)
+    diferrence_between_nuum2_and_num3 = abs(num3 - num2)
+    condition_one = (diferrence_between_nuum1_and_num2 == 1) or (diferrence_between_nuum1_and_num3 == 1)
+    condition_tow_part_a = (diferrence_between_nuum1_and_num3 > 1) and (diferrence_between_nuum2_and_num3 > 1)
+    condition_tow_part_b = (diferrence_between_nuum1_and_num2 > 1) and (diferrence_between_nuum2_and_num3 > 1)
+    
+    if (condition_one) and (condition_tow_part_a):
+        return True
+    elif (condition_one) and (condition_tow_part_b):
+        return True
+    else:
+        return False
+
+result = distance(1, 2, 10)
+print(result)

@@ -1,0 +1,24 @@
+def sequence_del(my_str):
+    """recevie a string and delete all the letters that appear in sequence exept the first one.
+    :param my_str: the original string the function receive.
+    :type my_str: str.
+    :return new_str: a string without a sequences.
+    :rtype: str."""
+    new_str = ""
+    #go over all the sing in my_str
+    for n in my_str:
+        #check if the sing is all raedy in new_str.
+        if not(n in new_str):
+            new_str = new_str + n
+        #if the previous condition is true the fuction cheek if the last sing in new_str is not identical to n.
+        elif new_str[-1] != n:
+            new_str = new_str + n      
+    return new_str
+
+def main():
+    print(sequence_del("ppyyyyythhhhhooonnnnn"))
+    print(sequence_del("SSSSsssshhhh"))
+    print(sequence_del("Heeyyy   yyouuuu"))
+
+if __name__ == "__main__":
+    main()

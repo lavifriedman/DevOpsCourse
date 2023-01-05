@@ -1,0 +1,16 @@
+def fix_age(age):
+    if (age == 16) or (age == 15):
+        return age
+    elif (age > 12) and (age < 20):
+        return 0
+    else:
+        return age
+
+def filter_teens(a = 13, b = 13, c = 13):
+    a = fix_age(a)
+    b = fix_age(b)
+    c = fix_age(c)
+    age_sum = a + b + c
+    return age_sum
+    
+print(filter_teens(1,17,1))

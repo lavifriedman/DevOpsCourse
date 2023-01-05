@@ -1,0 +1,14 @@
+def shift_left(my_list):
+    """This function move all cells in a three cells length list by one step to the left direction.
+    :param my_list: a list of three cells length
+    :tyoe my_list: list
+    return: my_list after a movement of al three cells by one step to the left direction"""
+    my_list = [my_list[2], my_list[0], my_list[1]]
+    return my_list
+
+def main():
+    #test function shift_left
+    print(shift_left([1,2,3]))
+
+if __name__ == "__main__":
+    main()
