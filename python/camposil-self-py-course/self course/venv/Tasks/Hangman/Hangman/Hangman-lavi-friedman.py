@@ -229,7 +229,7 @@ def collect_file_path():
 
 
 def collect_index():
-    """Function receive form the user index and convert it to a int type variable.
+    """Function receive form the user index and convert it to int type variable.
     :return: index type int
     :rtype: int"""
     index = input("Enter please a index: ")
