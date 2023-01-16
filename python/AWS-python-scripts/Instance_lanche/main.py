@@ -62,6 +62,7 @@ def create_new_ec2(ami_id, min_count, max_count, instance_type, key_per_name, su
             'Groups': [sg.group_id]
         }],
     )
+    web_servers.wait_until_running()
     return web_servers
 
 
@@ -78,15 +79,15 @@ def print_instances_privet_ip(web_servers):
         print(instance.private_ip_address)
 
 
-def set_index_page(instance_ids):
+def set_index_page():
     ssm_client = boto3.client('ssm')
     response = ssm_client.send_command(
-        InstanceIds=instance_ids,
+        InstanceIds=["i-07c0bffde2573f4f5"],
         DocumentName="AWS-RunShellScript",
         Parameters={'commands': ['sudo apt -y install apache2']}, )
 
 
-Cidr_block = "192.168.10.0/24"
+"""Cidr_block = "192.168.10.0/24"
 subnet_block = "192.168.10.0/28"
 route_block = "0.0.0.0/0"
 ig_id = create_internet_gateway("new-ig")
@@ -100,10 +101,6 @@ add_name_and_date_to_instances(web_servers)
 print_instances_privet_ip(web_servers)
 instance_ids = []
 for instance in web_servers:
-    instance_ids.append(instance.id)
-
-
-
-
-
+    instance_ids.append(instance.id)"""
+set_index_page()
 
