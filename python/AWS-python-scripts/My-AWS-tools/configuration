@@ -1,0 +1,3 @@
+instance-type:t3.micro
+key-name: web-srv-1
+security-group: [{'GroupName': 'Project-sg', 'GroupId': 'sg-0488de0a80242fee2'}]
