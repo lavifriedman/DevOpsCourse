@@ -4,6 +4,7 @@ from datetime import datetime
 
 
 def create_vpc(cidr_block, vpc_name=None, internet_gateway_id=None):
+    """Function create a new VPC over AWS plat"""
     ec2 = boto3.resource("ec2")
     vpc = ec2.create_vpc(CidrBlock=cidr_block)
     if vpc_name is not None:
@@ -146,8 +147,9 @@ def main():
     create_route_table(vpc, route_block, ig_id, subnet.id)
     sg = create_sg(vpc)
     instances_number = collect_instance_number_from_user()
+    role_profile_name = input("Enter please the name of the role for set ssm IamInstanceProfile ")
     web_servers = create_new_ec2("ami-0b5eea76982371e91", instances_number, instances_number, "t3.micro", "ServerLXF01key", subnet.id, sg.id,
-                                 'ssm-rolue')
+                                 role_profile_name)
     add_name_and_date_to_instances(web_servers)
     print_instances_privet_ip(web_servers)
     save_instances_profile_in_file(web_servers, "configuration")
